@@ -49,6 +49,10 @@ class GameScene: SKScene {
     }
     
     override func didMove(to view: SKView) {
+        
+        physicsWorld.gravity(CGVector(dx: 0.0, dy: 0.0))
+//        Gravity does not play a significant role in the devlopment of a pool game
+        
         self.setUpScene()
     }
 
@@ -65,6 +69,7 @@ class GameScene: SKScene {
     }
 }
 
+ 
 #if os(iOS) || os(tvOS)
 // Touch-based event handling
 extension GameScene {
