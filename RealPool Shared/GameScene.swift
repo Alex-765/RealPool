@@ -9,6 +9,7 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    var background = SKSpriteNode(imageNamed: "Background Image")
     
     fileprivate var label : SKLabelNode?
     fileprivate var spinnyNode : SKShapeNode?
@@ -28,6 +29,9 @@ class GameScene: SKScene {
     }
     
     func setUpScene() {
+        
+        backgroundColor = SKColor.white
+        
         // Get label node from scene and store it for use later
         self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
         if let label = self.label {
@@ -49,8 +53,8 @@ class GameScene: SKScene {
     }
     
     override func didMove(to view: SKView) {
-        
-        physicsWorld.gravity(CGVector(dx: 0.0, dy: 0.0))
+//
+//        physicsWorld.gravity(CGVector(dx: 0.0, dy: 0.0))
 //        Gravity does not play a significant role in the devlopment of a pool game
         
         self.setUpScene()
