@@ -15,13 +15,12 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        physicsWorld.gravity = CGVector(dx: 0.0, dy: 0.0)
-        //        Gravity does not play a significant role in a pool game, as 2d
+        self.size = view.bounds.size
+    
 
         let table = SKSpriteNode(imageNamed: "PoolTable")
-        let sceneSize = CGSize(width: 1280, height: 720)
-        let gameScene = GameScene(size: sceneSize)
-        table.position = CGPoint(x: 640, y: 360)
+        
+        table.position = CGPoint(x: size.width / 2, y: size.height / 2)
         table.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         table.zPosition = -1
         addChild(table)
