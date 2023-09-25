@@ -14,20 +14,18 @@ class Ball: SKSpriteNode{
 class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
-//        physicsWorld.gravity(CGVector(dx: 0.0, dy: 0.0))
-//        Gravity does not play a significant role in the devlopment of a pool game
+        
+        physicsWorld.gravity = CGVector(dx: 0.0, dy: 0.0)
+        //        Gravity does not play a significant role in a pool game, as 2d
         
         var balls = ["RedBall", "BlueBall"]
+        
         let table = SKSpriteNode(imageNamed: "PoolTable")
+        
         let sceneSize = CGSize(width: 1280, height: 720)
         let gameScene = GameScene(size: sceneSize)
-        table.position = CGPoint(x: 6440, y: 360)
+        table.position = CGPoint(x: 640, y: 360)
         addChild(table)
-    
-        
-        
-        
-        
     }
 
     override func update(_ currentTime: TimeInterval) {
